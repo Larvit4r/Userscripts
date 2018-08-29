@@ -5,7 +5,6 @@
 // @icon        https://dreamwidth.org/favicon.ico
 // @author	Ryu / Larvit4r
 // @version	2018.08.28
-// @license	GPLv3
 // @include	*://*.dreamwidth.org/*
 // @exclude	*://journal-to-exclude-here.dreamwidth.org/*
 // @require	https://code.jquery.com/jquery-1.11.3.min.js
