@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name	Dreamwidth: Simple and Clean, Black and Green
 // @namespace	https://github.com/Larvit4r/Userscripts/
+// @updateURL	https://openuserjs.org/meta/Larvit4r/Dreamwidth_Simple_and_Clean,_Black_and_Green.meta.js
 // @description	Removes DW clutter and changes the Tropo background to Black and Green! Untested on non-Tropo styles. Adapted from userstyle.org's userstyle->userscript code.
 // @icon        https://dreamwidth.org/favicon.ico
 // @author	Ryu / Larvit4r
