@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name	Dreamwidth: Simple and Clean, Black and Green
 // @namespace	https://github.com/Larvit4r/Userscripts/
-// @updateURL	https://openuserjs.org/meta/Larvit4r/Dreamwidth_Simple_and_Clean,_Black_and_Green.meta.js
 // @description	Removes DW clutter and changes the Tropo background to Black and Green! Untested on non-Tropo styles. Adapted from userstyle.org's userstyle->userscript code.
 // @icon        https://dreamwidth.org/favicon.ico
 // @author	Ryu / Larvit4r
-// @version	2018.08.28
+// @version	2018.08.29
 // @license	GPL-3.0-or-later
 // @include	*://dreamwidth.org/*
 // @include	*://*.dreamwidth.org/*
@@ -24,19 +23,20 @@
 	".poster-usernametoblockhere {display:none !important}",
 // For hiding images in entry OPs, may make a toggle feature for this after I've learned to code better. Mainly for my fellow anon community users.
 	".entry_text img,.entry_content img,div.latest-entry.usercontent img {display:none !important}",
-// #020 = Really dark/"black-ish" green (background)
+// #222 - Off-black (background)
+// #020 = Really dark/"black-ish" green (if you'd prefer a greener background)
 // #052 = Green
 // #DDD = Off-white (text)
 // If you're still figuring out color codes, remember that #123 is short for #112233!
-	"body,html,#canvas,#page,#masthead,#lj_controlstrip,#lj_controlstrip td{background-color:#020 !important;background:#020 !important;background-image:none !important;color:#DDD !important;border:0px !important;padding:0px !important;border-bottom:0px !important;border-right:0px !important}",
-	"form td,.details_stats,#settings_left,.tablist .tab disabled,.action-bar {background-color:#020 !important;background:#020 !important;color:#DDD !important;border:0px !important}",
-	"#canvas #header .inner,.navigation,#entries .entry,.section_head,.panel,.alert-box,.topnav,.tab-header .comment-info,.tablist .tab,.comment .inner .header,div.actions ul li,#page nav,.progress-meter li,.postfix, #nav-login-form,div.username,.button.radius {background-color:#052 !important;color:#DDD !important;border:0px !important;background:#052 !important; box-shadow: 0 0 0 !important}",
-	".action-box .inner,#shim-alpha,.comment-pages,.inner,#intro-box,#intro-box-main,.highlight-box,.shop-status-bar {background:transparent !important;color:#DDD !important;border:0px !important}",
-	"h1,h2,h3,h4,h5,h6{color:#DDD !important;background:transparent !important}",
+	"body,html,#canvas,#page,#masthead,#lj_controlstrip,#lj_controlstrip td{background-color:#222 !important;background:#222 !important;background-image:none !important;color:#DDD !important;border:0px !important;padding:0px !important;border-bottom:0px !important;border-right:0px !important}",
+	"form td,.details_stats,#settings_left,.tablist .tab disabled,.action-bar,.settings_content,#settings_nav a,td.NotificationOptions,.history_label,.history_option,.table-as-list td{background-color:#222 !important;background:#222 !important;color:#DDD !important;border:0px !important}",
+	".selected,#canvas #header .inner,.navigation,#entries .entry,.section_head,.panel,.alert-box,.topnav,.tab-header .comment-info,.tablist .tab,.comment .inner .header,div.actions ul li,#page nav,.progress-meter li,.postfix,#nav-login-form,div.username,.button.radius,button,.subheader,.customize-nav-group,#uploadBox-inner,.tab-header,#settings_nav a.active,th.display_label,form th,.inset-box,#cf-select,#cf-intro,.column-table th,.table-as-list th,.tags-container{background-color:#052 !important;color:#DDD !important;border:0px !important;background:#052 !important; box-shadow: 0 0 0 !important}",
+	".folders a,.action-box .inner,#shim-alpha,.comment-pages,.inner,#intro-box,#intro-box-main,.highlight-box,.shop-status-bar{background:transparent !important;color:#DDD !important;border:0px !important}",
+	"h1,h2,h3,h4,h5,h6,.entry .header,.entry .footer{color:#DDD !important;background:transparent !important}",
 	"span,.entry-content,form tr,.section,div.profile th,li.unavailable,ul,ol,li,p,fieldset,label{color:#DDD !important;background:transparent !important;border:0px !important}",
-	".nav ul li a,.topnav a,div.section {background-color:#052 !important;border:0px !important}",
+	".nav ul li a,.topnav a,div.section{background-color:#052 !important;border:0px !important}",
 // Form objects
-	"input,textarea,textbox,select,fieldset legend {background-color:#696 !important;border:0px !important;color:#DDD !important}",
+	"input,textarea,textarea::placeholder,textbox,select,fieldset legend,.warning-box,.screened{background-color:#686 !important;border:0px !important;color:#DDD !important;border-top:0px !important;border-left:0px !important}",
 // Spoiler cuts
 // See: https://fail-fandomanon.dreamwidth.org/1076.html?thread=1102398260
 // Keep in mind that this code will only work for 1. posts where it's already enabled or 2. people using custom CSS code like this userscript, so spoilers will not be properly hidden for most people.
@@ -49,10 +49,10 @@
 	"div[tabindex]:focus>b~div{display:inline}",
 	"div[tabindex]:focus{outline:none}",
 // Links
-	"span.expandcollapse.on a {color:#AAA !important}",
-	"a:link {color:#0C0 !important}",
-	"a:visited {color:#070 !important}",
-	"a:hover {color:#F90 !important}",
-	"a:active {color:#FC0 !important}",
+	"span.expandcollapse.on a{color:#AAA !important}",
+	"a:link{color:#0C0 !important}",
+	"a:visited{color:#070 !important}",
+	"a:hover{color:#F90 !important}",
+	"a:active{color:#FC0 !important}",
 // DON'T TOUCH
 ""].join("\n");if(typeof GM_addStyle!="undefined"){GM_addStyle(css)}else if(typeof PRO_addStyle!="undefined"){PRO_addStyle(css)}else if(typeof addStyle!="undefined"){addStyle(css)}else{var node=document.createElement("style");node.type="text/css";node.appendChild(document.createTextNode(css));var heads=document.getElementsByTagName("head");if(heads.length>0){heads[0].appendChild(node)}else{document.documentElement.appendChild(node)}}})()
